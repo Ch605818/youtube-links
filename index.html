@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My YouTube Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.2.4/tailwind.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe); /* Simple 2D gradient color */
+            padding: 20px;
+        }
+        .link-item {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="max-w-lg mx-auto">
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">YouTube Links Publisher Chidera Austin</h1>
+
+        <form id="linkForm" class="bg-white p-4 rounded-lg shadow-lg mb-6">
+            <label for="title" class="block font-medium mb-2">Video Title</label>
+            <input type="text" id="title" name="title" required class="w-full border border-gray-300 rounded-lg p-2 mb-4">
+
+            <label for="url" class="block font-medium mb-2">YouTube Link</label>
+            <input type="url" id="url" name="url" required placeholder="https://www.youtube.com/watch?v=example" class="w-full border border-gray-300 rounded-lg p-2 mb-4">
+
+            <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-4 rounded w-full">Add Link</button>
+        </form>
+
+        <h2 class="text-2xl font-semibold mb-4">Published YouTube Links</h2>
+        <div id="linkList" class="space-y-4">
+            <div class="link-item">
+                <h3 class="font-bold text-lg">Nakoma Austino</h3>
+                <a href="https://youtu.be/g1c5TZkd14Q" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+            </div>
+            <div class="link-item">
+                <h3 class="font-bold text-lg">Nakoma Austino</h3>
+                <a href="https://youtu.be/c9O3lnM6jQ8" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+            </div>
+            <div class="link-item">
+                <h3 class="font-bold text-lg">Cambridge Primary Checkpoint Maths Paper 1 (April 2024)</h3>
+                <a href="https://www.youtube.com/watch?v=8L85lxp_hn8" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+            </div>
+            <div class="link-item">
+                <h3 class="font-bold text-lg">Primary Checkpoint Math April 2024 Paper 1 - 0096/01</h3>
+                <a href="https://www.youtube.com/watch?v=3KEkxfOHgZs" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+            </div>
+            <div class="link-item">
+                <h3 class="font-bold text-lg">Cambridge Lower Secondary Checkpoint Science Paper 1 (October 2023)</h3>
+                <a href="https://www.youtube.com/watch?v=2i35BlDlMgM" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+            </div>
+            <div class="link-item">
+                <h3 class="font-bold text-lg">089_01_AM_2024 Secondary Checkpoint Science Paper</h3>
+                <a href="https://www.youtube.com/watch?v=I199vqqqIF0" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+            </div>
+            <div class="link-item">
+                <h3 class="font-bold text-lg">Best revision - checkpoint (2022 Past Papers)</h3>
+                <a href="https://www.youtube.com/watch?v=A1L6Xx-9ixU" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+            </div>
+            <div class="link-item">
+                <h3 class="font-bold text-lg">How to Score 5.0 in The Cambridge Checkpoint Exam 2022</h3>
+                <a href="https://www.youtube.com/watch?v=Wna8SpWOBFY" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+            </div>
+            <div class="link-item">
+                <h3 class="font-bold text-lg">Cambridge Secondary Checkpoint Exam: Complete Guide</h3>
+                <a href="https://www.youtube.com/watch?v=2LoO5h1K-ZE" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('linkForm');
+        const linkList = document.getElementById('linkList');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const url = document.getElementById('url').value;
+
+            if (title && url) {
+                const div = document.createElement('div');
+                div.className = 'link-item';
+                div.innerHTML = `
+                    <h3 class="font-bold text-lg">${title}</h3>
+                    <a href="${url}" target="_blank" class="text-blue-500 underline">Watch on YouTube</a>
+                `;
+                linkList.appendChild(div);
+
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>
